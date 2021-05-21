@@ -1,0 +1,30 @@
+<!--
+  ~ Copyright 2020. Huawei Technologies Co., Ltd. All rights reserved.
+  ~
+  ~    Licensed under the Apache License, Version 2.0 (the "License");
+  ~    you may not use this file except in compliance with the License.
+  ~    You may obtain a copy of the License at
+  ~
+  ~      http://www.apache.org/licenses/LICENSE-2.0
+  ~
+  ~    Unless required by applicable law or agreed to in writing, software
+  ~    distributed under the License is distributed on an "AS IS" BASIS,
+  ~    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~    See the License for the specific language governing permissions and
+  ~    limitations under the License.
+  ~
+  -->
+
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="32dp"
+    android:height="32dp"
+    android:viewportWidth="32"
+    android:viewportHeight="32">
+  <path
+      android:pathData="M12.2096,27.6952V23.6062C12.2096,22.5662 13.0575,21.7211 14.108,21.7141H17.9561C19.0117,21.7141 19.8674,22.5612 19.8674,23.6062V23.6062V27.7079C19.8671,28.5909 20.579,29.3126 21.4707,29.3333H24.0361C26.5935,29.3333 28.6667,27.2809 28.6667,24.7491V24.7491V13.1171C28.653,12.1211 28.1806,11.1858 27.384,10.5774L18.6103,3.5804C17.0733,2.3621 14.8883,2.3621 13.3512,3.5804L4.616,10.5901C3.8163,11.196 3.3432,12.1329 3.3333,13.1298V24.7491C3.3333,27.2809 5.4065,29.3333 7.9639,29.3333H10.5293C11.4431,29.3333 12.184,28.5999 12.184,27.6952V27.6952"
+      android:strokeLineJoin="round"
+      android:strokeWidth="1.5"
+      android:fillColor="#00000000"
+      android:strokeColor="#ffffff"
+      android:strokeLineCap="round"/>
+</vector>

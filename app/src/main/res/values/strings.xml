@@ -1,0 +1,101 @@
+<resources>
+    <string name="app_name">Pangolin</string>
+    <string name="hello_blank_fragment" translatable="false">Hello blank fragment</string>
+    <string name="chat">Chat</string>
+    <string name="call">Call</string>
+    <string name="camera">Camera</string>
+    <string name="image">Image</string>
+    <string name="contacts">Contacts</string>
+    <string name="settings">Settings</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="openDrawer">open_drawer</string>
+    <string name="closeDrawer">close_drawer</string>
+
+    <string name="nav_settings">Settings</string>
+
+    <style name="nav_contacts">Contacts</style>
+
+    <string name="dummyText" translatable="false">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?</string>
+    <string name="request_friend">Please add me as a friend to your network.</string>
+
+    <string-array name="nav_item_activity_titles">
+        <item>Contacts</item>
+        <item>Notifications</item>
+        <item>Settings</item>
+    </string-array>
+
+    <string-array name="nav_item_onboard">
+        <item>o1</item>
+        <item>o2</item>
+        <item>o3</item>
+    </string-array>
+
+    <string name="onboarding_title1">Sharing made Secure</string>
+    <string name="onboarding_content1">Sharing made secure with your beloved accounts.</string>
+    <string name="onboarding_title2">No hassle, no Stress</string>
+    <string name="onboarding_content2">With its easy integration no hasssle about which is where.</string>
+    <string name="onboarding_title3">Find, Talk with your Friends Only</string>
+    <string name="onboarding_content3">See all who link their accounts but talk only to those who accepted as a Friend.</string>
+
+    <string name="activity_title_about_us">About Us</string>
+    <string name="activity_title_privacy_policy">Privacy Policy</string>
+    <string name="action_logout">Logout</string>
+    <string name="profile_picture">Profile Picture</string>
+    <string name="about">About</string>
+    <string name="search_stock">Search stock</string>
+    <string name="flash">Flash</string>
+    <string name="video_photo">Video - Photo</string>
+    <string name="rotate">Rotate</string>
+    <string name="camera_hint">Hold for video, tap for photo</string>
+    <string name="make_friends_item">Make friends Item</string>
+    <string name="make_friends">Make Friends</string>
+    <string name="Friends">Friends</string>
+    <string name="arrow">Arrow</string>
+    <string name="title_activity_onboarding">OnboardingActivity</string>
+
+    <string name="error_name">Please enter a valid Username</string>
+    <string name="error_bio">Please enter a valid Bio</string>
+
+    <string name="action_app_version">Pangolin Version <b>%1$s</b></string>
+
+    <string name="prompt_save_username">Username saved as <bi>%1$s</bi> is successful</string>
+    <string name="prompt_username">You can choose a username on <b>Pangolin</b>. If you do, people will be able to find you by this username and contact you easily.</string>
+    <string name="prompt_bio">Any details such as Age, Country, City.\nExample: 23 y.o Android Developer from Istanbul.</string>
+
+    <!--
+    This string is used for square devices and overridden by hello_world in
+    values-round/strings.xml for round devices.
+    -->
+    <string name="hello_world">Hello Square World!</string>
+    <string name="styling">Styling</string>
+    <string name="logo">Logo</string>
+    <string name="sign_in">Sign In</string>
+    <string name="welcome">Welcome!</string>
+    <string name="pending_friend_requests">Pending Requests</string>
+    <string name="edit">Edit</string>
+    <string name="username">Username</string>
+    <string name="login_method">Login Method</string>
+    <string name="bio">Bio</string>
+    <string name="none">None</string>
+    <string name="notification_settings">Notification Settings</string>
+    <string name="data_usage">Data Usage</string>
+    <string name="privacy">Privacy and Security</string>
+    <string name="language">Language</string>
+    <string name="total_friends_online"><b>%1$s</b> Friends Online</string>
+    <string name="total_friends"><b>%1$s</b> Friends</string>
+    <string name="total_users"><b>%1$s</b> Users</string>
+    <string name="zero">0</string>
+    <string name="send_friend">Send Friend Request</string>
+    <string name="some_posts_maybe_hidden">Some posts maybe hidden.</string>
+    <string name="unfriend">UnFriend</string>
+    <string name="detect_language">detect language</string>
+    <string name="en">en</string>
+    <string name="media">Media</string>
+    <string name="docs">Docs</string>
+    <string name="links">Links</string>
+    <string name="save">Save</string>
+    <string name="error_image_upload">Error occured while uploading your Image!</string>
+    <string name="revoke_friend">Revoke Friend Request</string>
+</resources>

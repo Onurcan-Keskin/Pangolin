@@ -1,0 +1,501 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/frag_coordinator"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:animateLayoutChanges="true"
+    android:background="@drawable/colour_purple_background"
+    tools:context=".ui.fragments.SettingsFragment">
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/frag_material_root"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:cardBackgroundColor="@color/transparent">
+
+        <androidx.coordinatorlayout.widget.CoordinatorLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <com.google.android.material.appbar.AppBarLayout
+                android:id="@+id/appBarLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/darkPurple_Navigation"
+                android:theme="@style/ThemeOverlay.MaterialComponents.Dark.ActionBar">
+
+                <com.google.android.material.appbar.CollapsingToolbarLayout
+                    android:id="@+id/frag_settings_cToolbar"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:fitsSystemWindows="true"
+                    app:contentScrim="@color/darkPurple"
+                    app:expandedTitleMarginEnd="64dp"
+                    app:expandedTitleMarginStart="48dp"
+                    app:layout_scrollFlags="scroll|exitUntilCollapsed"
+                    tools:title="Title">
+
+                    <ImageView
+                        android:id="@+id/toolbar_image"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:contentDescription="@string/image"
+                        android:fitsSystemWindows="true"
+                        android:scaleType="fitXY"
+                        app:layout_collapseMode="parallax"
+                        tools:src="@drawable/ic_profile" />
+
+                    <androidx.appcompat.widget.Toolbar
+                        android:id="@+id/toolbar"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:layout_collapseMode="pin">
+
+                        <ImageButton
+                            android:id="@+id/back_arrow"
+                            android:layout_width="wrap_content"
+                            android:layout_height="?attr/actionBarSize"
+                            android:background="@color/transparent"
+                            android:contentDescription="@string/arrow"
+                            android:src="@drawable/ic_arrow_left" />
+
+                        <include
+                            android:id="@+id/toolbar_header_view"
+                            layout="@layout/widget_header_view"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="30dp"
+                            app:layout_behavior=".helpers.HeaderBehavior" />
+
+                    </androidx.appcompat.widget.Toolbar>
+
+                </com.google.android.material.appbar.CollapsingToolbarLayout>
+
+            </com.google.android.material.appbar.AppBarLayout>
+
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/frag_settings_change_prof"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:contentDescription="@string/edit"
+                app:layout_anchor="@id/appBarLayout"
+                app:layout_anchorGravity="bottom|end"
+                app:srcCompat="@drawable/ic_edit" />
+
+            <androidx.core.widget.NestedScrollView
+                android:id="@+id/frag_settings_nested_lyt"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:id="@+id/frag_settings_username_lyt"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/darkPurple_Item"
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:foreground="@drawable/round_ripple"
+                        android:padding="@dimen/settings_item_padding"
+                        android:weightSum="5">
+
+                        <Space
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight=".3" />
+
+                        <ImageView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_weight="1"
+                            android:contentDescription="@string/username"
+                            android:src="@drawable/ic_profile" />
+
+                        <Space
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight=".3" />
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="3.4"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:id="@+id/frag_settings_username"
+                                style="@style/TextAppearance.AppCompat.Small"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_gravity="center_vertical"
+                                android:ellipsize="end"
+                                android:fontFamily="@font/roboto"
+                                android:maxEms="1"
+                                android:maxLines="1"
+                                android:textColor="@color/white"
+                                tools:text="@string/username" />
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/roboto"
+                                android:text="@string/username"
+                                android:textColor="@color/gray_fade" />
+
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="@color/lightPurple" />
+
+                    <LinearLayout
+                        android:id="@+id/frag_settings_login_lyt"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/darkPurple_Item"
+                        android:padding="@dimen/settings_item_padding"
+                        android:weightSum="5">
+
+                        <Space
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight=".3" />
+
+                        <ImageView
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_gravity="center"
+                            android:layout_weight="1"
+                            android:contentDescription="@string/login_method"
+                            android:src="@drawable/ic_login_methods" />
+
+                        <Space
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight=".3" />
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="3.4"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:id="@+id/frag_settings_login_method"
+                                style="@style/TextAppearance.AppCompat.Small"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_gravity="center_vertical"
+                                android:ellipsize="end"
+                                android:fontFamily="@font/roboto"
+                                android:maxEms="1"
+                                android:maxLines="1"
+                                android:textColor="@color/white"
+                                tools:text="@string/login_method" />
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/roboto"
+                                android:text="@string/login_method"
+                                android:textColor="@color/gray_fade" />
+
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="@color/lightPurple" />
+
+                    <LinearLayout
+                        android:id="@+id/frag_settings_bio_lyt"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/darkPurple_Item"
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:foreground="@drawable/round_ripple"
+                        android:padding="@dimen/settings_item_padding"
+                        android:weightSum="5">
+
+                        <Space
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight=".3" />
+
+                        <ImageView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_weight="1"
+                            android:contentDescription="@string/bio"
+                            android:src="@drawable/ic_info_circle" />
+
+                        <Space
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight=".3" />
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="3.4"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:id="@+id/frag_settings_bio"
+                                style="@style/TextAppearance.AppCompat.Small"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_gravity="center_vertical"
+                                android:ellipsize="end"
+                                android:fontFamily="@font/roboto"
+                                android:maxEms="1"
+                                android:maxLines="1"
+                                android:textColor="@color/white"
+                                tools:text="@string/none" />
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/roboto"
+                                android:text="@string/bio"
+                                android:textColor="@color/gray_fade" />
+
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="10dp"
+                        android:background="@color/transparent" />
+
+                    <LinearLayout
+                        android:id="@+id/frag_settings_notification_lyt"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/darkPurple_Item"
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:foreground="@drawable/round_ripple"
+                        android:padding="@dimen/settings_item_padding"
+                        android:weightSum="5">
+
+                        <Space
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight=".3" />
+
+                        <ImageView
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_gravity="center"
+                            android:layout_weight="1"
+                            android:contentDescription="@string/notification_settings"
+                            android:src="@drawable/ic_notification" />
+
+                        <Space
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight=".3" />
+
+                        <TextView
+                            style="@style/TextAppearance.AppCompat.Small"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:layout_weight="3.4"
+                            android:ellipsize="end"
+                            android:fontFamily="@font/roboto"
+                            android:maxEms="1"
+                            android:maxLines="1"
+                            android:text="@string/notification_settings"
+                            android:textColor="@color/white" />
+
+                    </LinearLayout>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="@color/lightPurple" />
+
+                    <LinearLayout
+                        android:id="@+id/frag_settings_data_lyt"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/darkPurple_Item"
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:foreground="@drawable/round_ripple"
+                        android:padding="@dimen/settings_item_padding"
+                        android:weightSum="5">
+
+                        <Space
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight=".3" />
+
+                        <ImageView
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_gravity="center"
+                            android:layout_weight="1"
+                            android:contentDescription="@string/data_usage"
+                            android:src="@drawable/ic_data" />
+
+                        <Space
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight=".3" />
+
+                        <TextView
+                            style="@style/TextAppearance.AppCompat.Small"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:layout_weight="3.4"
+                            android:ellipsize="end"
+                            android:fontFamily="@font/roboto"
+                            android:maxEms="1"
+                            android:maxLines="1"
+                            android:text="@string/data_usage"
+                            android:textColor="@color/white" />
+
+                    </LinearLayout>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="@color/lightPurple" />
+
+                    <LinearLayout
+                        android:id="@+id/frag_settings_privacy_lyt"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/darkPurple_Item"
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:foreground="@drawable/round_ripple"
+                        android:padding="@dimen/settings_item_padding"
+                        android:weightSum="5">
+
+                        <Space
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight=".3" />
+
+                        <ImageView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_weight="1"
+                            android:contentDescription="@string/privacy"
+                            android:src="@drawable/ic_privacy" />
+
+                        <Space
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight=".3" />
+
+                        <TextView
+                            style="@style/TextAppearance.AppCompat.Small"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:layout_weight="3.4"
+                            android:ellipsize="end"
+                            android:fontFamily="@font/roboto"
+                            android:maxEms="1"
+                            android:maxLines="1"
+                            android:text="@string/privacy"
+                            android:textColor="@color/white" />
+
+                    </LinearLayout>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="@color/lightPurple" />
+
+                    <LinearLayout
+                        android:id="@+id/frag_settings_language_lyt"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/darkPurple_Item"
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:foreground="@drawable/round_ripple"
+                        android:padding="@dimen/settings_item_padding"
+                        android:weightSum="5">
+
+                        <Space
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight=".3" />
+
+                        <ImageView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_weight="1"
+                            android:contentDescription="@string/language"
+                            android:src="@drawable/ic_language" />
+
+                        <Space
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight=".3" />
+
+                        <TextView
+                            style="@style/TextAppearance.AppCompat.Small"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:layout_weight="3.4"
+                            android:ellipsize="end"
+                            android:fontFamily="@font/roboto"
+                            android:maxEms="1"
+                            android:maxLines="1"
+                            android:text="@string/language"
+                            android:textColor="@color/white" />
+
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/frag_settings_app_version"
+                        style="@style/TextAppearance.AppCompat.Medium"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="bottom"
+                        android:fontFamily="@font/bree_serif"
+                        android:gravity="center"
+                        android:padding="5dp"
+                        android:textColor="@color/white"
+                        tools:text="@string/app_name" />
+
+                </LinearLayout>
+
+            </androidx.core.widget.NestedScrollView>
+
+        </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+    </com.google.android.material.card.MaterialCardView>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

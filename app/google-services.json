@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "36794121530",
+    "project_id": "pangolin-c4c78",
+    "storage_bucket": "pangolin-c4c78.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:36794121530:android:6ce9a378755d2399a32403",
+        "android_client_info": {
+          "package_name": "com.onurcan.pangolin"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "36794121530-rokmfq33v0gt1l166cgsf2a5ru824qah.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.onurcan.pangolin",
+            "certificate_hash": "22a3643c12034e28d880faf313c08084e304f75a"
+          }
+        },
+        {
+          "client_id": "36794121530-ee8a1u7i2i8mqe2ndkh4fg70auk446dk.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCofg8-ziI2Gd0UrbYnZsacrkESGECJDYg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "36794121530-ee8a1u7i2i8mqe2ndkh4fg70auk446dk.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

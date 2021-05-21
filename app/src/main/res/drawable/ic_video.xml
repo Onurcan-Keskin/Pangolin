@@ -1,0 +1,31 @@
+<!--
+  ~ Copyright 2020. Huawei Technologies Co., Ltd. All rights reserved.
+  ~
+  ~    Licensed under the Apache License, Version 2.0 (the "License");
+  ~    you may not use this file except in compliance with the License.
+  ~    You may obtain a copy of the License at
+  ~
+  ~      http://www.apache.org/licenses/LICENSE-2.0
+  ~
+  ~    Unless required by applicable law or agreed to in writing, software
+  ~    distributed under the License is distributed on an "AS IS" BASIS,
+  ~    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~    See the License for the specific language governing permissions and
+  ~    limitations under the License.
+  ~
+  -->
+
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="24dp"
+    android:height="24dp"
+    android:viewportWidth="24"
+    android:viewportHeight="24">
+  <path
+      android:pathData="M21.331,7.4425C20.912,7.1786 20.397,7.1552 19.958,7.3786L18.476,8.1268C17.928,8.4029 17.588,8.9613 17.588,9.5826V15.4161C17.588,16.0375 17.928,16.5948 18.476,16.873L19.957,17.6202C20.158,17.7238 20.373,17.7735 20.588,17.7735C20.846,17.7735 21.102,17.7004 21.331,17.5573C21.75,17.2943 22,16.8385 22,16.339V8.6618C22,8.1623 21.75,7.7065 21.331,7.4425Z"
+      android:strokeAlpha="0.4"
+      android:fillColor="#ffffff"
+      android:fillAlpha="0.4"/>
+  <path
+      android:pathData="M11.9051,20H6.113C3.691,20 2,18.3299 2,15.9391V9.0609C2,6.669 3.691,5 6.113,5H11.9051C14.3271,5 16.0181,6.669 16.0181,9.0609V15.9391C16.0181,18.3299 14.3271,20 11.9051,20Z"
+      android:fillColor="#ffffff"/>
+</vector>

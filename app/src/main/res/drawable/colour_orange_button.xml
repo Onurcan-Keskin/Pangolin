@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+    <solid android:color="@color/darkPurple" />
+
+    <gradient
+        android:endColor="#FB7F65"
+        android:startColor="#FD645E"
+        android:type="linear"
+        android:angle="90"/>
+
+    <corners
+        android:topRightRadius="@dimen/orange_buttons"
+        android:topLeftRadius="@dimen/orange_buttons"
+        android:bottomRightRadius="@dimen/orange_buttons"
+        android:bottomLeftRadius="@dimen/orange_buttons"/>
+
+</shape>

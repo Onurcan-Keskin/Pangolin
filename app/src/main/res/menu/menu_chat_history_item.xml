@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/nav_media"
+        android:icon="@drawable/ic_media"
+        android:menuCategory="system"
+        android:title="@string/media"
+        app:showAsAction="always" />
+    <item
+        android:id="@+id/nav_docs"
+        android:icon="@drawable/ic_docs"
+        android:menuCategory="system"
+        android:title="@string/docs"
+        app:showAsAction="always" />
+    <item
+        android:id="@+id/nav_link"
+        android:icon="@drawable/ic_link"
+        android:menuCategory="system"
+        android:title="@string/links"
+        app:showAsAction="always" />
+</menu>

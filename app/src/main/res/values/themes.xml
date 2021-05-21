@@ -1,0 +1,225 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+
+    <style name="Theme.Pangolin" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
+        <item name="colorPrimary">@color/darkPurple_Navigation</item>
+        <item name="colorPrimaryVariant">@color/darkPurple_Navigation</item>
+        <item name="colorOnPrimary">@color/white</item>
+        <item name="colorSecondary">@color/teal_200</item>
+        <item name="colorSecondaryVariant">@color/teal_700</item>
+        <item name="colorOnSecondary">@color/black</item>
+        <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
+        <item name="android:windowActionBarOverlay">true</item>
+        <item name="materialCalendarTheme">@style/DatePickerStyle</item>
+    </style>
+
+    <!-- -->
+    <style name="DatePickerStyle" parent="@style/ThemeOverlay.MaterialComponents.MaterialCalendar">
+        <item name="trackColorActive">@color/amberLight</item>
+        <item name="colorPrimary">@color/amberLight</item>
+        <item name="cornerRadius">16dp</item>
+        <item name="cornerSize">16dp</item>
+        <item name="cardCornerRadius">16dp</item>
+        <item name="materialCalendarHeaderDivider">@style/HeaderDivider</item>
+        <item name="materialCalendarHeaderLayout">@style/HeaderLayout</item>
+        <item name="cornerFamily">rounded</item>
+        <item name="materialCalendarHeaderTitle">@style/Widget.MaterialComponents.MaterialCalendar.HeaderTitle</item>
+        <item name="materialCalendarHeaderSelection">@style/HeaderSelection</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="rangeFillColor">@color/amber</item>
+        <item name="android:focusedMonthDateColor">@color/amberLight</item>
+        <item name="android:positiveButtonText">@string/save</item>
+        <item name="android:negativeButtonText">@string/fui_cancel</item>
+        <item name="shapeAppearanceSmallComponent">@style/ShapeAppearance.App.SmallComponent</item>
+        <item name="shapeAppearanceMediumComponent">@style/ShapeAppearance.App.MediumComponent</item>
+        <item name="shapeAppearanceLargeComponent">@style/ShapeAppearance.App.LargeComponent</item>
+    </style>
+
+    <style name="HeaderLayout" parent="android:Widget">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">36dp</item>
+        <item name="android:layout_gravity">center</item>
+        <item name="android:layout_marginTop">4dp</item>
+        <item name="android:layout_marginEnd">4dp</item>
+        <item name="android:gravity">center</item>
+    </style>
+
+    <style name="HeaderDivider" parent="android:Widget">
+        <item name="android:visibility">gone</item>
+        <item name="android:background">@color/amber</item>
+    </style>
+
+    <style name="vertical_item_divider">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">1dp</item>
+        <item name="backgroundColor">@color/amber</item>
+        <item name="android:colorBackground">@color/amberLight</item>
+    </style>
+
+    <style name="horizontal_item_divider">
+        <item name="android:layout_width">1dp</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="background">@color/amberLight</item>
+    </style>
+
+    <style name="Widget.MaterialComponents.MaterialCalendar.Day" parent="Widget.MaterialComponents.MaterialCalendar.Item">
+        <item name="itemShapeAppearanceOverlay">@style/MaterialCalendarDay</item>
+        <item name="android:width">24dp</item>
+        <item name="android:gravity">center</item>
+        <item name="android:layout_gravity">center</item>
+        <item name="android:height">24dp</item>
+        <item name="android:insetTop">5dp</item>
+        <item name="android:insetBottom">5dp</item>
+        <item name="android:insetLeft">5dp</item>
+        <item name="android:insetRight">5dp</item>
+    </style>
+
+    <style name="MaterialCalendar.Day" parent="">
+        <item name="itemFillColor">@color/amberLight</item>
+        <item name="itemTextColor">@color/amberPale</item>
+        <item name="itemStrokeColor">@color/amberLight</item>
+        <item name="itemStrokeWidth">0dp</item>
+        <item name="itemShapeAppearance">@style/MaterialOverlayDay</item>
+        <item name="itemShapeAppearanceOverlay">@style/MaterialOverlayDay</item>
+    </style>
+
+    <style name="MaterialOverlayDay" parent="">
+        <item name="cornerFamily">rounded</item>
+        <item name="android:gravity">center</item>
+        <item name="android:layout_gravity">center</item>
+        <item name="cornerSize">15dp</item>
+    </style>
+
+    <style name="MaterialCalendarDay" parent="">
+        <item name="cornerSize">15dp</item>
+        <item name="android:gravity">center</item>
+        <item name="android:layout_gravity">center</item>
+    </style>
+
+    <style name="Widget.MaterialComponents.MaterialCalendar.DayTextView" parent="Widget.AppCompat.TextView">
+        <item name="android:textAppearance">@style/TextAppearance.AppCompat.Small</item>
+        <item name="android:gravity">center</item>
+    </style>
+
+    <style name="Widget.App.Button" parent="Widget.MaterialComponents.Button.TextButton.Dialog">
+        <item name="materialThemeOverlay">@style/ThemeOverlay.App.Button.TextButton</item>
+        <item name="shapeAppearance">@style/ShapeAppearance.App.SmallComponent</item>
+        <item name="android:gravity">start</item>
+        <item name="android:layout_gravity">start</item>
+        <item name="divider">@style/horizontal_item_divider</item>
+    </style>
+
+    <style name="ThemeOverlay.App.Button.TextButton" parent="">
+        <item name="colorPrimary">@color/amberLight</item>
+        <item name="android:gravity">start</item>
+        <item name="android:layout_gravity">start</item>
+    </style>
+
+    <style name="Widget.MaterialComponents.MaterialCalendar.HeaderLayout" parent="android:Widget">
+        <item name="android:background">@color/white</item>
+        <item name="cornerSize">16dp</item>
+    </style>
+
+    <style name="ShapeAppearance.App.SmallComponent" parent="ShapeAppearance.MaterialComponents.SmallComponent">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">16dp</item>
+    </style>
+
+    <style name="ShapeAppearance.App.MediumComponent" parent="ShapeAppearance.MaterialComponents.MediumComponent">
+        <item name="cornerSize">16dp</item>
+    </style>
+
+    <style name="ShapeAppearance.App.LargeComponent" parent="ShapeAppearance.MaterialComponents.LargeComponent">
+        <item name="cornerSize">16dp</item>
+    </style>
+
+    <style name="ShapeAppearanceOverlay.MaterialAlertDialog.Rounded" parent="">
+        <item name="cornerSize">16dp</item>
+        <item name="cornerFamily">rounded</item>
+    </style>
+
+    <style name="ShapeAppearanceOverlay">
+        <item name="cornerFamilyBottomLeft">rounded</item>
+        <item name="cornerFamilyBottomRight">rounded</item>
+        <item name="cornerFamilyTopLeft">rounded</item>
+        <item name="cornerFamilyTopRight">rounded</item>
+    </style>
+
+    <style name="TextAppearance.MaterialComponents.Button" parent="Base.TextAppearance.MaterialComponents.Button">
+        <item name="android:textColor">@color/amberLight</item>
+        <item name="android:gravity">start</item>
+        <item name="android:layout_gravity">start</item>
+    </style>
+
+    <style name="Widget.MaterialComponents.MaterialCalendar.HeaderSelection" parent="MaterialAlertDialog.MaterialComponents.Title.Text">
+        <!-- Selection of Dates -->
+        <item name="android:visibility">gone</item>
+    </style>
+
+    <style name="Widget.MaterialComponents.MaterialCalendar.HeaderTitle" parent="Widget.AppCompat.TextView">
+        <item name="android:textSize">18sp</item>
+        <item name="android:textAppearance">@style/TextHeader</item>
+    </style>
+
+    <style name="TextHeader" parent="TextAppearance.AppCompat.Large">
+        <item name="android:textColor">@color/amberLight</item>
+        <item name="android:textSize">18sp</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">36dp</item>
+        <item name="android:layout_gravity">center</item>
+        <item name="android:layout_marginTop">16dp</item>
+        <item name="android:gravity">center</item>
+        <item name="android:maxLines">1</item>
+        <item name="android:ellipsize">end</item>
+        <item name="autoSizeTextType">uniform</item>
+        <item name="autoSizeMaxTextSize">18sp</item>
+        <item name="autoSizeMinTextSize">2sp</item>
+    </style>
+
+    <style name="HeaderSelection" parent="Widget.AppCompat.TextView">
+        <item name="android:visibility">gone</item>
+    </style>
+
+    <style name="Widget.MaterialComponents.MaterialCalendar.HeaderToggleButton" parent="Widget.AppCompat.ImageButton">
+        <item name="android:visibility">gone</item>
+        <item name="android:clickable">false</item>
+        <item name="android:focusable">false</item>
+    </style>
+
+    <style name="MaterialCalendarMonthNavigationButton">
+        <item name="android:visibility">gone</item>
+        <item name="iconTint">@color/transparent</item>
+        <item name="android:clickable">false</item>
+        <item name="android:focusable">false</item>
+    </style>
+
+    <style name="MaterialCalendarYearNavigationButton">
+        <item name="android:clickable">false</item>
+        <item name="android:focusable">false</item>
+        <item name="iconTint">@color/transparent</item>
+    </style>
+
+    <style name="Widget.MaterialComponents.MaterialCalendar.Year" parent="Widget.MaterialComponents.MaterialCalendar.Item">
+        <item name="android:visibility">gone</item>
+    </style>
+    <!---->
+
+    <style name="BlurTheme" parent="android:style/Theme.Translucent">
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:backgroundDimEnabled">true</item>
+        <item name="android:windowActionBarOverlay">true</item>
+        <item name="android:background">@color/transparent</item>
+    </style>
+
+    <style name="Theme.Pangolin.SlidrActivityTheme">
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+    </style>
+
+    <style name="DialogSlide">
+        <item name="android:windowActionBarOverlay">true</item>
+        <item name="android:windowEnterAnimation">@anim/slide_in_right</item>
+        <item name="android:windowExitAnimation">@anim/slide_out_left</item>
+    </style>
+</resources>

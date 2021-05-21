@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.drawerlayout.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_drawer"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".ui.activities.MainActivity">
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <com.google.android.material.appbar.AppBarLayout
+            android:id="@+id/appBarLayout"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="@color/darkPurple_Navigation"
+            android:theme="@style/ThemeOverlay.MaterialComponents.Dark.ActionBar"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                android:orientation="horizontal"
+                android:weightSum="2.3">
+
+                <ImageButton
+                    android:id="@+id/main_drawer_opener"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:layout_weight=".3"
+                    android:background="@color/transparent"
+                    android:clickable="true"
+                    android:contentDescription="@string/navigation_drawer_open"
+                    android:focusable="true"
+                    android:foreground="@drawable/round_ripple"
+                    android:src="@drawable/ic_category" />
+
+                <RelativeLayout
+                    android:id="@+id/main_search_lyt"
+                    android:layout_width="0dp"
+                    android:layout_height="?attr/actionBarSize"
+                    android:layout_weight="1.7"
+                    android:visibility="gone">
+
+                    <android.widget.AutoCompleteTextView
+                        android:id="@+id/search"
+                        android:layout_width="match_parent"
+                        android:layout_height="?attr/actionBarSize"
+                        android:layout_gravity="center_vertical"
+                        android:completionThreshold="1"
+                        android:dropDownWidth="match_parent"
+                        android:focusable="true"
+                        android:focusableInTouchMode="true"
+                        android:hint="@string/search_stock"
+                        android:imeOptions="actionSearch|flagNoExtractUi"
+                        android:inputType="textNoSuggestions"
+                        android:singleLine="true" />
+
+                </RelativeLayout>
+
+                <nl.joery.animatedbottombar.AnimatedBottomBar
+                    android:id="@+id/main_bar"
+                    android:layout_width="0dp"
+                    android:layout_height="?attr/actionBarSize"
+                    android:layout_weight="1.7"
+                    android:visibility="visible"
+                    app:abb_indicatorAppearance="round"
+                    app:abb_indicatorColor="@color/orange_pangolin"
+                    app:abb_indicatorHeight="4dp"
+                    app:abb_indicatorLocation="bottom"
+                    app:abb_indicatorMargin="0dp"
+                    app:abb_rippleEnabled="true"
+                    app:abb_selectedIndex="1"
+                    app:abb_selectedTabType="text"
+                    app:abb_tabAnimation="slide"
+                    app:abb_tabAnimationSelected="slide"
+                    app:abb_tabColorSelected="@color/orange_pangolin"
+                    app:abb_tabs="@menu/main_topbar"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <ImageButton
+                    android:id="@+id/main_search_button"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:layout_weight=".3"
+                    android:background="@color/transparent"
+                    android:clickable="true"
+                    android:contentDescription="@string/navigation_drawer_open"
+                    android:focusable="true"
+                    android:foreground="@drawable/round_ripple"
+                    android:src="@drawable/ic_search" />
+
+            </LinearLayout>
+
+        </com.google.android.material.appbar.AppBarLayout>
+
+        <androidx.viewpager2.widget.ViewPager2
+            android:id="@+id/main_pager"
+             android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:background="@drawable/colour_purple_background"
+            android:visibility="visible"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/appBarLayout" />
+
+        <FrameLayout
+            android:id="@+id/main_frame"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:background="@drawable/colour_purple_background"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/appBarLayout" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <include
+        android:id="@+id/main_nav_inc"
+        layout="@layout/drawer_navigation" />
+
+</androidx.drawerlayout.widget.DrawerLayout>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.onurcan.pangolin.helpers.HeaderView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/header"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:visibility="visible"
+    tools:background="@color/darkPurple_Navigation">
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/image"
+        android:layout_width="48dp"
+        android:layout_height="33dp"
+        android:paddingStart="4dp"
+        android:paddingEnd="4dp"
+        android:paddingTop="10dp"
+        android:paddingBottom="2dp"
+        android:background="@drawable/ic_champion"
+        android:layout_marginEnd="@dimen/activity_horizontal_margin"
+        tools:src="@drawable/pangolin" />
+
+    <TextView
+        android:id="@+id/last_seen"
+        style="@style/TextAppearance.AppCompat.Medium"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:fontFamily="@font/bree_serif"
+        android:singleLine="true"
+        android:textColor="@android:color/white"
+        tools:text="@string/app_name" />
+
+</com.onurcan.pangolin.helpers.HeaderView>

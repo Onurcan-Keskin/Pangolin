@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:background="@drawable/colour_purple_background">
+
+    <LinearLayout
+        android:id="@+id/make_friends_tab"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        android:orientation="vertical"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:id="@+id/main_chatF_makeF_tab"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:clickable="true"
+            android:focusable="true"
+            android:foreground="@drawable/round_ripple"
+            android:orientation="horizontal"
+            android:padding="5dp"
+            android:weightSum="1">
+
+            <TextView
+                style="@style/TextAppearance.AppCompat.Large"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/activity_horizontal_margin"
+                android:layout_weight=".6"
+                android:fontFamily="@font/bicubik"
+                android:text="@string/make_friends"
+                android:textColor="@color/white" />
+
+            <TextView
+                android:id="@+id/main_chatF_users_online"
+                style="@style/TextAppearance.AppCompat.Small"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:layout_weight=".3"
+                android:gravity="center"
+                android:textColor="@color/white"
+                android:textSize="@dimen/amount_of_text_size"
+                tools:text="@string/total_users" />
+
+            <ImageButton
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight=".1"
+                android:background="@color/transparent"
+                android:contentDescription="@string/arrow"
+
+                android:src="@drawable/ic_arrow_up"
+                android:tint="@color/white" />
+        </LinearLayout>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/makeF_recycler"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/grid_makeF_two"
+            android:clipToPadding="false"
+            android:paddingStart="@dimen/activity_horizontal_margin"
+            android:paddingEnd="@dimen/activity_horizontal_margin"
+            android:scrollbarStyle="outsideOverlay"
+            tools:listitem="@layout/single_make_friends_item" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/friends_tab"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/make_friends_tab"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/make_friends_tab">
+
+        <LinearLayout
+            android:id="@+id/main_chatF_friends_tab"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:clickable="true"
+            android:focusable="true"
+            android:foreground="@drawable/round_ripple"
+            android:orientation="horizontal"
+            android:padding="5dp"
+            android:weightSum="1">
+
+            <TextView
+                style="@style/TextAppearance.AppCompat.Large"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/activity_horizontal_margin"
+                android:layout_weight=".6"
+                android:fontFamily="@font/bicubik"
+                android:text="@string/Friends"
+                android:textColor="@color/white" />
+
+            <TextView
+                android:id="@+id/main_chatF_friends_online"
+                style="@style/TextAppearance.AppCompat.Small"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:layout_weight=".3"
+                android:background="@drawable/colour_orange_button"
+                android:gravity="center"
+                android:textColor="@color/white"
+                android:textSize="@dimen/amount_of_text_size"
+                tools:text="@string/total_friends_online" />
+
+            <ImageButton
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight=".1"
+                android:background="@color/transparent"
+                android:contentDescription="@string/arrow"
+                android:src="@drawable/ic_arrow_up"
+                android:tint="@color/white" />
+        </LinearLayout>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/friends_recycler"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:paddingStart="@dimen/activity_horizontal_margin"
+            android:paddingEnd="@dimen/activity_horizontal_margin"
+            tools:listitem="@layout/single_chat_item" />
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

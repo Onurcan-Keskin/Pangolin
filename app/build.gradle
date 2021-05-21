@@ -1,0 +1,224 @@
+plugins {
+    id 'com.onesignal.androidsdk.onesignal-gradle-plugin'
+
+    id 'com.android.application'
+    id 'kotlin-android'
+    id 'kotlin-kapt'
+    id 'kotlin-android-extensions'
+    id 'dagger.hilt.android.plugin'
+
+    id 'com.huawei.agconnect'
+    id 'com.google.gms.google-services'
+}
+
+if (getGradle().getStartParameter().getTaskRequests().toString().toLowerCase().contains("gms")) {
+    apply plugin: 'com.google.gms.google-services'
+} else {
+    apply plugin: 'com.huawei.agconnect'
+}
+
+android {
+    compileSdkVersion 30
+    buildToolsVersion "30.0.3"
+
+    defaultConfig {
+        applicationId "com.onurcan.pangolin"
+        minSdkVersion 23
+        targetSdkVersion 30
+        versionCode 1
+        versionName "1.0"
+        multiDexEnabled true
+
+        manifestPlaceholders = [
+                onesignal_app_id: 'b904f59b-8ac6-461e-a697-15758657212c',
+                onesignal_google_project_number: 'REMOTE'
+        ]
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+
+    lintOptions {
+        checkReleaseBuilds false
+    }
+
+    flavorDimensions "version"
+    productFlavors {
+        hms {
+            dimension "version"
+        }
+
+        gms {
+            dimension "version"
+        }
+    }
+
+    signingConfigs {
+        release {
+            storeFile file('pangolin_signin.jks')
+            keyAlias 'keyalias'
+            keyPassword '123123'
+            storePassword '123123'
+            v1SigningEnabled true
+            v2SigningEnabled true
+        }
+    }
+
+    buildTypes {
+        release {
+            signingConfig signingConfigs.release
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+        debug {
+            signingConfig signingConfigs.release
+        }
+    }
+
+    buildFeatures {
+        dataBinding true
+        viewBinding = true
+    }
+
+    kapt {
+        useBuildCache = true
+    }
+}
+
+dependencies {
+    implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
+    implementation 'androidx.core:core-ktx:1.3.2'
+    implementation 'androidx.appcompat:appcompat:1.2.0'
+    implementation 'com.google.android.material:material:1.2.1'
+    implementation 'androidx.constraintlayout:constraintlayout:2.0.4'
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+    implementation 'androidx.lifecycle:lifecycle-livedata-ktx:2.2.0'
+    testImplementation 'junit:junit:4.+'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.2'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
+
+    def fragment_version = "1.3.0-alpha08"
+    implementation "androidx.fragment:fragment-ktx:$fragment_version"
+
+    implementation 'com.evernote:android-job:1.4.1'
+    implementation 'androidx.work:work-runtime:2.5.0'
+
+    /* Coroutine */
+    implementation 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.3.0-alpha05'
+    implementation 'androidx.lifecycle:lifecycle-runtime-ktx:2.3.0-alpha05'
+    implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-core:1.0.1'
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:1.0.1"
+
+    implementation 'androidx.ui:ui-tooling:0.1.0-dev02'
+    implementation 'androidx.ui:ui-layout:0.1.0-dev02'
+    implementation 'androidx.ui:ui-material:0.1.0-dev02'
+
+    /* Material */
+    //noinspection GradleDependency
+    implementation 'com.google.android.material:material:1.0.0-alpha1'
+
+    /* Huawei */
+    implementation 'com.huawei.agconnect:agconnect-core:1.4.1.300'
+    hmsImplementation 'com.huawei.agconnect:agconnect-auth:1.4.1.300'
+    hmsImplementation 'com.huawei.hms:hwid:5.0.3.302'
+    hmsImplementation 'com.huawei.hms:push:4.0.3.301'
+
+    /* Google */
+    gmsImplementation 'com.google.firebase:firebase-auth:20.0.1'
+    gmsImplementation 'com.google.android.gms:play-services-auth:19.0.0'
+
+    /* Firebase */
+    implementation platform('com.google.firebase:firebase-bom:26.1.0')
+    implementation 'com.google.firebase:firebase-database:19.5.1'
+    implementation 'com.google.firebase:firebase-storage:19.2.1'
+    implementation 'com.firebaseui:firebase-ui-auth:6.2.0'
+    implementation 'com.firebaseui:firebase-ui-database:6.2.0'
+    implementation 'com.firebaseui:firebase-ui-firestore:6.2.0'
+    implementation 'com.firebaseui:firebase-ui-storage:6.2.0'
+
+    /* OneSignal */
+    implementation 'com.onesignal:OneSignal:[4.0.0, 4.99.99]'
+
+    /* Cuberto */
+    implementation 'com.cuberto:liquid-swipe:1.0.0'
+
+    /* ButterKnife */
+    implementation 'com.jakewharton:butterknife:10.2.3'
+    kapt 'com.jakewharton:butterknife-compiler:10.2.3'
+
+    /* Dagger Hilt */
+    implementation "com.google.dagger:hilt-android:2.28-alpha"
+    kapt "com.google.dagger:hilt-android-compiler:2.28-alpha"
+
+    /* Dots Indicator */
+    implementation 'com.tbuonomo.andrui:viewpagerdotsindicator:4.1.2'
+
+    /* Keyboard Listener */
+    def keyboard_listener = "2.1.0"
+    implementation "net.yslibrary.keyboardvisibilityevent:keyboardvisibilityevent:$keyboard_listener"
+
+    // CameraX core library using the camera2 implementation
+    def camerax_version = "1.0.0-beta03"
+    def camerax_extensions = "1.0.0-alpha10"
+    //noinspection GradleDependency
+    implementation "androidx.camera:camera-core:${camerax_version}"
+    //noinspection GradleDependency
+    implementation "androidx.camera:camera-camera2:${camerax_version}"
+    // If you want to additionally use the CameraX Lifecycle library
+    //noinspection GradleDependency
+    implementation "androidx.camera:camera-lifecycle:${camerax_version}"
+    // If you want to additionally use the CameraX View class
+    //noinspection GradleDependency
+    implementation "androidx.camera:camera-view:${camerax_extensions}"
+    // If you want to additionally use the CameraX Extensions library
+    //noinspection GradleDependency
+    implementation "androidx.camera:camera-extensions:${camerax_extensions}"
+
+    /* PhotoViewAttacher */
+    implementation 'com.github.chrisbanes:PhotoView:2.1.4'
+
+    /* Bottom Navigation - AwesomeStyles */
+    implementation 'nl.joery.animatedbottombar:library:1.0.8'
+
+    /* Best Slidr*/
+    implementation 'com.r0adkll:slidableactivity:2.1.0'
+
+    /* Universal Image Loader */
+    implementation 'com.nostra13.universalimageloader:universal-image-loader:1.9.5'
+
+    /* Video Viewer */
+    implementation 'com.klinkerapps:simple_videoview:1.2.4'
+
+    /* AirBnb Anims */
+    implementation 'com.airbnb.android:lottie:3.4.0'
+
+    /* Image Compressor (For Thumbing) */
+    //noinspection GradleDependency
+    implementation 'id.zelory:compressor:2.1.0'
+    api 'com.theartofdev.edmodo:android-image-cropper:2.8.0'
+
+    /* Circle Image View */
+    implementation 'de.hdodenhof:circleimageview:3.1.0'
+
+    /* Square */
+    implementation 'com.squareup.picasso:picasso:2.71828'
+
+    /* MultiDex */
+    implementation 'androidx.multidex:multidex:2.0.1'
+
+    /* Work Runtime */
+    implementation 'android.arch.work:work-runtime:1.0.1'
+}
